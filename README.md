@@ -145,5 +145,5 @@ This project is open-source and available under the MIT License.
 ---
 
 ##  Author
-Developed as a bioinformatics project focusing on restriction enzyme-based mutation analysis.
+Developed as a bioinformatics small project focusing on restriction enzyme-based mutation analysis.
 
