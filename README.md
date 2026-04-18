@@ -3,6 +3,9 @@
 Author: Mihtula J
 Affiliation: Institute of applied sciences, Parul University
 Email: mithullaajinde317@gmail.com
+## 📄 Citation
+This project is published on Zenodo:
+https://doi.org/10.5281/zenodo.19638491
 
 # 🔬 RE-Insight
 
