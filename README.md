@@ -41,10 +41,10 @@ Unlike conventional restriction site finders, this tool focuses on **comparative
 ## 🧠 How It Works
 
 1. Input two DNA sequences (wild-type and mutant)
-2. Convert enzyme recognition patterns into regex
-3. Scan sequences for restriction sites
-4. Compare enzyme cutting patterns
-5. Output enzymes that differentiate sequences
+2. the program Converts enzyme recognition patterns into regex
+3. Scans the  sequences for restriction sites
+4. Compares enzyme cutting patterns
+5. Output - enzymes that differentiate sequences
 6. Simulate digestion fragments
 
 ---
@@ -96,8 +96,8 @@ Mutant:     GAATTCCGGTTTC
 Enzymes cutting ONLY wild-type: ['EcoRI']  
 Enzymes cutting ONLY mutant: []  
 ```
-
----
+sample data input provided - BRCA1 dataset is derived from reference sequence (NCBI RefSeq: NM_007294.4). A single nucleotide mutation was introduced to simulate variant analysis.
+mutation created manually 
 
 ## Applications
 
@@ -106,15 +106,11 @@ Enzymes cutting ONLY mutant: []
 * Molecular cloning validation
 * Bioinformatics education
 
----
-
 ## Technologies Used
 
 * Python
 * Regular Expressions (`re`)
 * Modular programming approach
-
----
 
 ##  Limitations
 
@@ -136,14 +132,6 @@ Enzymes cutting ONLY mutant: []
 
 Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
----
-
-## 📄 License
-
-This project is open-source and available under the MIT License.
-
----
-
-##  Author
+#**NOTE**
 Developed as a bioinformatics small project focusing on restriction enzyme-based mutation analysis.
 
