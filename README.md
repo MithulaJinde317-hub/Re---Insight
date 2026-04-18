@@ -1,4 +1,9 @@
-# Re---Insight
+# Re-Insight
+
+Author: Mihtula J
+Affiliation: Institute of applied sciences, Parul University
+Email: mithullaajinde317@gmail.com
+
 # 🔬 RE-Insight
 
 Context-Aware Restriction Enzyme Analysis Tool for Mutation Differentiation
