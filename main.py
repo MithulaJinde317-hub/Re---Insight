@@ -1,26 +1,51 @@
-import re
-from enzymes import enzymes
-from degenerate import convert_to_regex
+# main.py
 
-def find_sites(sequence):
-    results = {}
+from comparison import compare_sequences, find_sites
+from utils import read_fasta, simulate_fragments
 
-    for enzyme, pattern in enzymes.items():
-        regex_pattern = convert_to_regex(pattern)
-        matches = [m.start() for m in re.finditer(regex_pattern, sequence)]
-        
-        results[enzyme] = matches
+def main():
+    print("\n=== RE-Insight: Restriction Enzyme Analysis Tool ===\n")
 
-    return results
+    choice = input("Choose input type:\n1. Manual input\n2. FASTA file\nEnter choice (1/2): ")
 
-def reverse_complement(seq):
-    complement = str.maketrans("ATGC", "TACG")
-    return seq.translate(complement)[::-1]
+    if choice == "1":
+        seq1 = input("\nEnter wild-type sequence: ").upper()
+        seq2 = input("Enter mutant sequence: ").upper()
 
-def find_sites_both_strands(sequence):
-    rc_seq = reverse_complement(sequence)
+    elif choice == "2":
+        file1 = input("Enter path for wild-type FASTA: ")
+        file2 = input("Enter path for mutant FASTA: ")
 
-    forward = find_sites(sequence)
-    reverse = find_sites(rc_seq)
+        seq1 = read_fasta(file1)
+        seq2 = read_fasta(file2)
 
-    return forward, reverse
+    else:
+        print("Invalid choice")
+        return
+
+    # Compare sequences
+    unique1, unique2 = compare_sequences(seq1, seq2)
+
+    print("\n--- RESULTS ---")
+
+    print("\nEnzymes cutting ONLY wild-type:")
+    print(unique1 if unique1 else "None")
+
+    print("\nEnzymes cutting ONLY mutant:")
+    print(unique2 if unique2 else "None")
+
+    # Optional: show fragment simulation for first enzyme
+    from comparison import find_sites
+
+    sites = find_sites(seq1)
+
+    if unique1:
+        enzyme = unique1[0]
+        print(f"\nFragment simulation for {enzyme} (wild-type):")
+
+        fragments = simulate_fragments(seq1, sites[enzyme])
+        print("Fragment sizes:", fragments)
+
+
+if __name__ == "__main__":
+    main()
