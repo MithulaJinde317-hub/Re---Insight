@@ -1,6 +1,6 @@
 # Re-Insight
 
-Author: Mihtula J
+Author: Mithula J
 Affiliation: Institute of applied sciences, Parul University
 Email: mithullaajinde317@gmail.com
 ## 📄 Citation
